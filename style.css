@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body {
+    text-align: center;
+    background-image: url('img/Fondo1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.different{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.formLogin {
+    background-color: #ffffffce;
+    border: 4px #108373 solid;
+    border-radius: 15px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formLogin h1 {
+    margin: 50px;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: #108373;
+}
+.formLogin h2 {
+    margin: 25px;
+    text-transform: uppercase;
+    color: #108373;
+}
+.formLogin form p {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.formLogin label {
+    display: block;
+    width: 350px;
+}
+.formLogin form input[type="radio"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px; 
+}
+.registro {
+    height: 40px;
+    width: 350px;
+    text-align: center;
+    border: #108373 2px solid;
+    border-radius: 25px;
+    margin: 10px;
+    background-color: transparent;
+}
+.texto {
+    height: 40px;
+    width: 350px;
+    text-align: center;
+    border: #108373 2px solid;
+    border-radius: 25px;
+    margin: 20px;
+    background-color: transparent;
+}
+.administrador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffffa8;
+    border: 4px #108373 solid;
+    width: 95%;
+    padding: 40px; 
+    margin: 10px auto; 
+    border-radius: 20px;
+}
+.logoutBtn {
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+.boton {
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    border: #108373 2px solid;
+    border-radius: 25px;
+    margin: 5px;
+    background-color: #60b1a6;
+}
+.boton:hover {
+    background-color: #b1eee6;
+}
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #60b1a6;
+}
+.formArchivos form {
+    border: 2px solid #108373;
+    padding: 5px; 
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:250px;
+    width: 350px;
+    margin-top: 30px;
+    border-radius: 30px;
+}
+.formArchivos input {
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    border: #108373 2px solid;
+    border-radius: 25px;
+    margin: 10px;
+    background-color: transparent;
+}
