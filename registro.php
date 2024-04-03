@@ -13,17 +13,16 @@
     <div class="formLogin">
         <form>
             <h2>Ingrese sus datos</h2>
-            <!--genero (M = Masculino, F = Femeninio, X = Prefiero no especificar)-->
             <label>Nombre</label>
-            <input class="registro" type="text" id="nombre" name="nombre" placeholder="Ingrese su(s) nombre(s)">
+            <input class="registro" type="text" id="nombre" name="nombre" placeholder="Ingrese su(s) nombre(s)" required>
             <label>Apellidos</label>
-            <input class="registro" type="text" id="apellidos" name="apellidos" placeholder="Ingrese su(s) apellido(s)">
+            <input class="registro" type="text" id="apellidos" name="apellidos" placeholder="Ingrese su(s) apellido(s)" required>
             <label>Username</label>
-            <input class="registro" type="text" id="username" name="username" placeholder="Ingrese su correo">
+            <input class="registro" type="email" id="username" name="username" placeholder="Ingrese su correo" required>
             <label>Contraseña</label>
-            <input class="registro" type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+            <input class="registro" type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
             <label>Confirmar contraseña</label>
-            <input class="registro" type="password" id="password" name="password" placeholder="Vuelva a ingresar su contraseña">
+            <input class="registro" type="password" id="password" name="password" placeholder="Vuelva a ingresar su contraseña" required>
             <!---->
             <label>Género:</label>
             <label for="generoM">
@@ -37,7 +36,8 @@
             </label>
             <!---->
             <br><label>Fecha de nacimiento</label>
-            <input class="registro" type="date" id="fechaNac" name="fechaNac"><br><br><br>
+            <input class="registro" type="date" id="fechaNac" name="fechaNac" required><br>
+            <input class="boton" type="button" value="Registrar" >
         </form>
     </div>
 </body>

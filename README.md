@@ -1,10 +1,14 @@
 # Practica-7-File-Manager (Parte 2 del File Manager)
 ## Registro de nuevos usuarios
-Crear una página para que los nuevos usuarios puedan registrarse, esto es pedir los datos necesarios para su registro: nombre, apellidos, username (que para nuestro caso debe ser una dirección de correo electrónico), password, confirmación del password, genero (M = Masculino, F = Femeninio, X = Prefiero no especificar) y fecha de nacimiento. 
+**[X]** Crear una página para que los nuevos usuarios puedan registrarse, esto es pedir los datos necesarios para su registro: nombre, apellidos, username (que para nuestro caso debe ser una dirección de correo electrónico), password, confirmación del password, genero (M = Masculino, F = Femeninio, X = Prefiero no especificar) y fecha de nacimiento. 
 
-Cabe mencionar que el username tiene que se un correo electrónico, por lo que hay que validar que se haya ingresado una dirección de correo; puede ser una validación básica, es decir que solo se valide si el valor que se ingresó tiene un '@' y también que el texto después del @ contenga un '.' (punto). Además al momento de registrarse se tiene que validar que no exista otro usuario con el mismo username.
+**[X]** Cabe mencionar que el username tiene que se un correo electrónico, por lo que hay que validar que se haya ingresado una dirección de correo; puede ser una validación básica, es decir que solo se valide si el valor que se ingresó tiene un '@' y también que el texto después del @ contenga un '.' (punto). 
 
-Todos los campos son obligatorios, así que tiene que validar tanto del lado del cliente como del lado del servidor (código PHP). Además que los campos que son cadenas de texto (username, nombre, apellidos) se debe validar que no se ingresen puros caracteres de espacios en blanco ' ', y al momento de guardar los datos en la base de datos, se debe hacer un trim() para quitar los espacios en blanco que al usuario se le hayan podido haber ido por accidente.
+Además al momento de registrarse se tiene que validar que no exista otro usuario con el mismo username.
+
+- **[X]** Todos los campos son obligatorios, así que tiene que validar tanto del lado del cliente || como del lado del servidor (código PHP). 
+- Además que los campos que son cadenas de texto (username, nombre, apellidos) se debe validar que no se ingresen puros caracteres de espacios en blanco ' '. 
+- Al momento de guardar los datos en la base de datos, se debe hacer un trim() para quitar los espacios en blanco que al usuario se le hayan podido haber ido por accidente.
 
 Es importante que al momento de guardar en base de datos los datos del usuario, el password del usuario se guarde cifrado de la siguiente forma: generar el password salt (64 caracteres aleatorios), al password en texto plano concatenarle al final el salt generado, al password en texto plano concatenado con el salt generarle el SHA512 y este será el password_encrypted.
 
