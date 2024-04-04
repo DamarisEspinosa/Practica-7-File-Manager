@@ -1,10 +1,7 @@
 <?php
 require "config.php";
-session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: login.php');
-    exit;
-}
+require_once APP_PATH . "sesion_requerida.php";
+require_once APP_PATH . "db.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +12,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="<?=APP_ROOT?>js/config.js"></script>
     <title>Administrador</title>
 </head>
 <body class="different">

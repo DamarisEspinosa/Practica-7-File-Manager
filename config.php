@@ -19,4 +19,10 @@ $CONTENT_TYPES_EXT = [
     "pdf" => "application/pdf",
     "bin" => "application/octet-stream"
 ];
+
+// Para la conexión con la base de datos 
+define("DB_DSN", "mysql:host=127.0.0.1;port=3306;dbname=my_db;charset=utf8mb4;");
+define("DB_USERNAME", "root"); 
+define("DB_PASSWORD", "");
+
 ?>

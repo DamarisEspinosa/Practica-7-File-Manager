@@ -7,11 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="<?=APP_ROOT?>js/config.js"></script>
     <title>Login</title>
 </head>
 <body>
     <div class="formLogin">
-        <form action="login_helper.php" method="post">
+        <form action="<?=APP_ROOT?>do_login.php" method="post">
             <h1>Bienvenido</h1>
             <input class="texto" type="text" id="username" name="username" placeholder="Ingrese el nombre de usuario">
             <input class="texto" type="password" id="password" name="password" placeholder="Ingrese la contraseña">
