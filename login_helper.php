@@ -1,6 +1,8 @@
 <?php
 
 require "login.php";
+require "conection.php";
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
