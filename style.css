@@ -110,9 +110,22 @@ body {
     justify-content: center;
     margin-top: 10px;
 }
+.botonVB {
+    /*height: 30px;*/
+    width: 100px;
+    padding: 8px;
+    text-align: center;
+    border: #108373 2px solid;
+    border-radius: 25px;
+    background-color: #60b1a6;
+}
+.botonVB:hover {
+    background-color: #b1eee6;
+}
 table {
+    margin-top: 35px;
     border-collapse: collapse;
-    width: 100%;
+    width: 1500px;
 }
 th, td {
     border: 2px solid black;
