@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="formLogin">
-        <form action="helper.php" method="post">
+        <form action="login_helper.php" method="post">
             <h1>Bienvenido</h1>
             <input class="texto" type="text" id="username" name="username" placeholder="Ingrese el nombre de usuario">
             <input class="texto" type="password" id="password" name="password" placeholder="Ingrese la contraseña">
