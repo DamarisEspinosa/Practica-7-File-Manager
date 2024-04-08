@@ -11,6 +11,7 @@ if (!$_SESSION) {
     $usuario_admin = $_SESSION["usuario_esAdmin"];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
