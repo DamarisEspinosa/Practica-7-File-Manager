@@ -1,5 +1,5 @@
 <?php 
-require "conection.php";
+
 // para autenticar al usuario 
 function verificar($username, $password){
 	$GLOBALS["password"] = $password;
