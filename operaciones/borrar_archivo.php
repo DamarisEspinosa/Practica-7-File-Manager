@@ -1,7 +1,7 @@
 <?php 
 
-require "config.php";
-require "Config/conexion.php";
+require "../config.php";
+require "../conection.php";
 
 $nombre = $_POST['archivo'];
 $id = $_POST['id_val'];

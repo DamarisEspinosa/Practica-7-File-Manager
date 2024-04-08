@@ -10,7 +10,7 @@ Además al momento de registrarse se tiene que validar que no exista otro usuari
 - Además que los campos que son cadenas de texto (username, nombre, apellidos) se debe validar que no se ingresen puros caracteres de espacios en blanco ' '. 
 - Al momento de guardar los datos en la base de datos, se debe hacer un trim() para quitar los espacios en blanco que al usuario se le hayan podido haber ido por accidente.
 
-Es importante que al momento de guardar en base de datos los datos del usuario, el password del usuario se guarde cifrado de la siguiente forma: generar el password salt (64 caracteres aleatorios), al password en texto plano concatenarle al final el salt generado, al password en texto plano concatenado con el salt generarle el SHA512 y este será el password_encrypted.
+- **[X]** Es importante que al momento de guardar en base de datos los datos del usuario, el password del usuario se guarde cifrado de la siguiente forma: generar el password salt (64 caracteres aleatorios), al password en texto plano concatenarle al final el salt generado, al password en texto plano concatenado con el salt generarle el SHA512 y este será el password_encrypted.
 
 ## Cambiar contraseña
 Agregar una opción para que una vez que el usuario ya haya iniciado sesión, este pueda cambiar la contraseña. Recordando que la contraseña en base de datos se guarda cifrada.

@@ -19,7 +19,7 @@ function Ver(hash) {
     };
             
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "verArchivo.php", true);
+    xhttp.open("POST", "../operaciones/verArchivo.php", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -57,21 +57,16 @@ document.getElementById('formSubirArchivo').addEventListener('submit', function(
 });
 
 function eliminar_archivo(name_file, id, hash) {
-    var resp = prompt("Esta seguro de eliminar el archivo ["+name_file+"]?\n y/n");
+    var resp = prompt("Esta seguro de eliminar el archivo "+name_file+" ?\n y/n");
 
     if(resp === "y"){
         let formData = new FormData();
         formData.append("archivo",name_file);
         formData.append("id_val", id);
         formData.append("hash_val", hash);
+        console.log("name_file:", name_file);
 
-        /*var datos = {
-            archivo_name: name_file,
-            id_val: id,
-            hash_val: hash
-        };*/
-
-        fetch('../operaciones/borrar_archivo.php', {
+        fetch('operaciones/borrar_archivo.php', {
             method: 'POST',
             body: formData
         })

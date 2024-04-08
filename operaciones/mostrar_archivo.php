@@ -35,7 +35,6 @@ require "../config.php";
                     echo "<td> <a href='". "archivos/".$valores['nombre_archivo_guardado'] ."'>" . $valores['nombre_archivo'] ."</a></td>";
                     echo "<td>". $valores['descripcion'] ."</td>";
                     echo "<td>". $valores['tamaño'] ." KB</td>";
-                    //echo "<td><a href='". "archivos/".$valores['nombre_archivo_guardado'] ."'>Ver</a></td>";
 
                     if($usuario_admin){
                         echo "<td><button class='botonVB' onclick=Ver('". $valores['hash_sha256'] ."')>". $visible ."</button></td>";
