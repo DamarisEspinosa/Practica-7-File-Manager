@@ -31,44 +31,17 @@ if (!$_SESSION) {
     </div>
     <div class="administrador">
         <h1>Bienvenido</h1>
-        <div class ="botones">
-            <button class="boton" id="list" onclick="mostrarTabla()">Listar archivos</button>
-            <?php if($usuario_admin){ ?>
-            <button class="boton" id="upload" onclick="mostrarForm()">Subir archivo</button>
-            <?php } ?>
-        </div>
-        <br>
-        <div class="table" id="tablaArchivos" style="display: none;">
-            <?php
-            $archivos = glob(DIR_UPLOAD . "*");
-            ?>
-            <table>
-                <tr>
-                    <th>Nombre del Archivo</th>
-                    <th>Tamaño del Archivo (KB)</th>
-                    <th>Borrar</th>
-                </tr>
-                <?php
-                foreach ($archivos as $archivo) {
-                    $nombreArchivo = basename($archivo);
-                    $tamañoArchivoKB = round(filesize($archivo) / 1024, 2);
-                ?>
-                <tr>
-                    <td><a href='operaciones/mostrar_archivo.php?nombre=<?php echo $nombreArchivo; ?>' target='_blank'><?php echo $nombreArchivo; ?></a></td>
-                    <td><?php echo $tamañoArchivoKB; ?> KB</td>
-                    <td><button class="boton" onclick="borrarArchivo(this.parentNode.parentNode, '<?php echo $nombreArchivo; ?>')">Borrar</button></td>
-                </tr>
-                <?php } ?>
-            </table>
-        </div>
-        <div class="formArchivos" style="display: none;" id="containerForm">
+        <div class="formArchivos" id="containerForm">
             <form id="formSubirArchivo" enctype="multipart/form-data">
-                <input type="text" name="nombreArchivo" placeholder="Nombre del archivo (opcional)">
-                <input type="file" name="archivo" accept=".jpg, .jpeg, .png, .gif, .pdf">
+                <input type="text" name="nombreArchivo" id="nombreArchivo" placeholder="Nombre del archivo">
+                <input type="text" name="descripcion" id="descripcion" placeholder="Ingrese una descripción">
+                <input type="file" name="archivo" id="archivo" accept=".jpg, .jpeg, .png, .gif, .pdf">
                 <button class="boton" type="button" onclick="subirArchivo()">Subir archivo</button>
             </form>
         </div>
+        <div id="container"></div>
+        
+        <script type="text/javascript" src="js/logic.js"></script>
     </div>
-    <script src="logic.js"></script>
 </body>
 </html>
