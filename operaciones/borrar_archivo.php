@@ -1,22 +1,23 @@
-<?php
-require "../config.php";
+<?php 
 
-if(isset($_POST['nombre'])) {
-    $nombreArchivo = basename($_POST['nombre']);
-    
-    $rutaArchivo = DIR_UPLOAD . $nombreArchivo;
-    
-    if(file_exists($rutaArchivo) && is_writable($rutaArchivo)) {
-        if(unlink($rutaArchivo)) {
-            echo "success";
-        } else {
-            echo "error";
-        }
+require "config.php";
+require "Config/conexion.php";
+
+$nombre = $_POST['archivo'];
+$id = $_POST['id_val'];
+$val_hash = $_POST['hash_val'];
+
+$sql = "UPDATE `archivos` SET `fecha_borrado`= NOW(), `usuario_borro_id` = ? WHERE `hash_sha256` = ?";
+
+try {
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$id, $val_hash]);
+    if (unlink(DIR_UPLOAD.$nombre)) {
+        echo "El archivo se ha eliminado correctamente en la carpeta: " . DIR_UPLOAD;
     } else {
-        echo "error";
+        echo "Ocurrió un error al intentar borrar el archivo. ". $id;
     }
-} else {
-    http_response_code(400);
-    echo "Solicitud incorrecta.";
+} catch (Exception $e) {
+    echo 'Datos no recibidos correctamente';
 }
 ?>

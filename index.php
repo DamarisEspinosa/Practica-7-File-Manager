@@ -32,12 +32,12 @@ if (!$_SESSION) {
     <div class="administrador">
         <h1>Bienvenido</h1>
         <div class="formArchivos" id="containerForm">
-            <?php if($usuario_admin){ ?>
-                <form id="formSubirArchivo" enctype="multipart/form-data">
+            <?php if($usuario_admin) { ?>
+                <form action="operaciones/subir_archivo.php" method="post" id="formSubirArchivo" enctype="multipart/form-data">
                     <input type="text" name="nombreArchivo" id="nombreArchivo" placeholder="Nombre del archivo">
                     <input type="text" name="descripcion" id="descripcion" placeholder="Ingrese una descripción">
                     <input type="file" name="archivo" id="archivo" accept=".jpg, .jpeg, .png, .gif, .pdf">
-                    <button class="boton" type="button" onclick="subirArchivo()">Subir archivo</button>
+                    <input class="boton" type="submit" id="subir" value="Subir archivo">
                 </form>
             <?php } ?>
         </div>

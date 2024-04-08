@@ -5,7 +5,7 @@ function verificar($username, $password){
 	$GLOBALS["password"] = $password;
 	//echo "Contraseña recibida en verificar(): " . $password . "<br>"; 
 	include("conection.php");
-	//echo "Contraseña recibida en verificar(): " . $GLOBALS["password"] . "<br>"; 
+	//echo "Contraseña recibida en verificar(): ." . $GLOBALS["password"] . ".<br>"; 
 
 	$stmt = $conn->prepare("SELECT * FROM usuarios WHERE username = ?");
 	$stmt->execute([$username]);
