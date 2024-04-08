@@ -51,11 +51,6 @@ body {
     display: block;
     width: 350px;
 }
-.formLogin form input[type="radio"] {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 5px; 
-}
 .registro {
     height: 40px;
     width: 350px;

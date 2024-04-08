@@ -1,6 +1,6 @@
 <?php 
 require "conection.php";
-
+// para autenticar al usuario 
 function verificar($username, $password){
 	$GLOBALS["password"] = $password;
 	//echo "Contraseña recibida en verificar(): " . $password . "<br>"; 
@@ -29,7 +29,26 @@ function verificar($username, $password){
 		"es_admin" => $valores["es_admin"]
 	];
 }
+// para registrar un nuevo usuario 
+function registrar($name, $apellidos, $correo, $contra, $genero, $fecha_nacimiento){
+	include("conexion.php");
 
+	$passwordSalt = strtoupper(bin2hex(random_bytes(32)));
+	$passwordEncrypted = strtoupper(hash("sha512", ($contra . $passwordSalt)));
+
+	$sql = "INSERT INTO `usuarios`(`id`, `username`, `password_encrypted`, `password_salt`, `nombre`, `apellidos`, `genero`, `fecha_nacimiento`, `fecha_hora_registro`, `es_admin`, `activo`) VALUES (default, ?, ?, ?, ?, ?, ?, ?, NOW(), 0, 1)";
+
+	$sqlParams = [$correo, $passwordEncrypted, $passwordSalt, $name, $apellidos, $genero, $fecha_nacimiento];
+
+	try {
+		$stmt = $conn->prepare($sql);
+		$stmt->execute($sqlParams);
+
+		return true;
+	} catch (Exception $e) {
+		return false;
+	}	
+}
 require "config.php";
 session_start();
 

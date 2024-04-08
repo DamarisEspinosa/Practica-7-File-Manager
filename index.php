@@ -29,7 +29,7 @@ if (!$_SESSION) {
         </form>
     </div>
     <div class="administrador">
-        <h1>Bienvenido Administrador</h1>
+        <h1>Bienvenido</h1>
         <div class ="botones">
             <button class="boton" id="list" onclick="mostrarTabla()">Listar archivos</button>
             <button class="boton" id="upload" onclick="mostrarForm()">Subir archivo</button>
