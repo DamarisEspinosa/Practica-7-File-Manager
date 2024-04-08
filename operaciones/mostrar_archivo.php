@@ -4,7 +4,6 @@ session_start();
 $usuario_admin = $_SESSION["usuario_esAdmin"];
 $usuario_id = $_SESSION["usuario_id"];
 require "../config.php";
-require "../login_helper.php";
 
 ?>
 

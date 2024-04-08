@@ -23,7 +23,7 @@ if (!$_SESSION) {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>Administrador</title>
 </head>
-<body class="different">
+<body onload="cargar();" class="different">
     <div class="logoutBtn">
         <form action="logout.php" method="post">
             <button class="boton" type="submit">Cerrar sesión</button>
@@ -32,12 +32,14 @@ if (!$_SESSION) {
     <div class="administrador">
         <h1>Bienvenido</h1>
         <div class="formArchivos" id="containerForm">
-            <form id="formSubirArchivo" enctype="multipart/form-data">
-                <input type="text" name="nombreArchivo" id="nombreArchivo" placeholder="Nombre del archivo">
-                <input type="text" name="descripcion" id="descripcion" placeholder="Ingrese una descripción">
-                <input type="file" name="archivo" id="archivo" accept=".jpg, .jpeg, .png, .gif, .pdf">
-                <button class="boton" type="button" onclick="subirArchivo()">Subir archivo</button>
-            </form>
+            <?php if($usuario_admin){ ?>
+                <form id="formSubirArchivo" enctype="multipart/form-data">
+                    <input type="text" name="nombreArchivo" id="nombreArchivo" placeholder="Nombre del archivo">
+                    <input type="text" name="descripcion" id="descripcion" placeholder="Ingrese una descripción">
+                    <input type="file" name="archivo" id="archivo" accept=".jpg, .jpeg, .png, .gif, .pdf">
+                    <button class="boton" type="button" onclick="subirArchivo()">Subir archivo</button>
+                </form>
+            <?php } ?>
         </div>
         <div id="container"></div>
         
