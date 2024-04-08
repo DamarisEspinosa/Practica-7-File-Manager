@@ -33,7 +33,9 @@ if (!$_SESSION) {
         <h1>Bienvenido</h1>
         <div class ="botones">
             <button class="boton" id="list" onclick="mostrarTabla()">Listar archivos</button>
+            <?php if($usuario_admin){ ?>
             <button class="boton" id="upload" onclick="mostrarForm()">Subir archivo</button>
+            <?php } ?>
         </div>
         <br>
         <div class="table" id="tablaArchivos" style="display: none;">
