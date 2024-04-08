@@ -1,9 +1,14 @@
 <?php
-require "config.php";
 session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+if (!$_SESSION) {
     header('Location: login.php');
-    exit;
+    exit();
+} else {
+    $usuario_id = $_SESSION['usuario_id'];
+    $usuario_correo = $_SESSION['usuario_username'];
+    $usuario_nombre = $_SESSION['usuario_nombre'];
+    $usuario_apellidos = $_SESSION['usuario_apellidos'];
+    $usuario_admin = $_SESSION["usuario_esAdmin"];
 }
 ?>
 <!DOCTYPE html>
