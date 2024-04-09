@@ -13,7 +13,7 @@ Además al momento de registrarse se tiene que validar que no exista otro usuari
 - **[X]** Es importante que al momento de guardar en base de datos los datos del usuario, el password del usuario se guarde cifrado de la siguiente forma: generar el password salt (64 caracteres aleatorios), al password en texto plano concatenarle al final el salt generado, al password en texto plano concatenado con el salt generarle el SHA512 y este será el password_encrypted.
 
 ## Cambiar contraseña
-Agregar una opción para que una vez que el usuario ya haya iniciado sesión, este pueda cambiar la contraseña. Recordando que la contraseña en base de datos se guarda cifrada.
+-**[X]** Agregar una opción para que una vez que el usuario ya haya iniciado sesión, este pueda cambiar la contraseña. Recordando que la contraseña en base de datos se guarda cifrada.
 
 ## Modificar datos personales
 -**[X]** El usuario también debe poder modificar sus datos personales: nombre, apellidos, genero y fecha de nacimiento. Tenga en cuanta que todos los datos son obligatorios, además que se tienen que validar tanto del lado del cliente como del lado del servidor (código PHP); además así como en el registro de nuevos usuarios, también se debe validar que no se hayan ingresado puros caracteres de espacios en blanco (' ') y al guardar hacer trim() para quitar los espacios en blanco que se hayan ido de más.

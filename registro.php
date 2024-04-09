@@ -1,3 +1,24 @@
+<?php
+require "config.php";
+require "register_helper.php";
+session_start();
+
+if($_POST) {
+
+    $nombre = filter_input(INPUT_POST, "nombre");
+    $apellidos = filter_input(INPUT_POST, "apellidos");
+    $username = filter_input(INPUT_POST, "username");
+    $password = filter_input(INPUT_POST, "password");
+    $genero = filter_input(INPUT_POST, "genero");
+    $fechaNac = filter_input(INPUT_POST, "fechaNac");
+    if (registrar($nombre, $apellidos, $username, $password, $genero, $fechaNac)) {
+        echo "<script type='text/javascript'>alert('Se ha registrado satisfactoriamente.')</script>";
+    } else {
+        echo "<script type='text/javascript'>alert('Ha ocurrido un error.')</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +36,7 @@
         <button class="boton" type="button" onclick="window.location.href='login.php'">Volver</button>
     </div>
     <div class="formLogin">
-        <form action="register_helper.php" method="post">
+        <form action="registro.php" method="post">
             <h2>Ingrese sus datos</h2>
             <label>Nombre</label>
             <input class="registro" type="text" id="nombre" name="nombre" placeholder="Ingrese su(s) nombre(s)" required>

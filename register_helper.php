@@ -20,22 +20,4 @@ function registrar($nombre, $apellidos, $username, $password, $genero, $fechaNac
 	}	
 }
 
-require "config.php";
-session_start();
-
-if($_POST) {
-
-    $nombre = filter_input(INPUT_POST, "nombre");
-    $apellidos = filter_input(INPUT_POST, "apellidos");
-    $username = filter_input(INPUT_POST, "username");
-    $password = filter_input(INPUT_POST, "password");
-    $genero = filter_input(INPUT_POST, "genero");
-    $fechaNac = filter_input(INPUT_POST, "fechaNac");
-    if (registrar($nombre, $apellidos, $username, $password, $genero, $fechaNac)) {
-        echo "<script type='text/javascript'>alert('Se ha registrado satisfactoriamente.')</script>";
-        echo "<script>console.log('Registro exitoso')</script>";
-        header("Location: registro.php");
-    }
-}
-
 ?>
