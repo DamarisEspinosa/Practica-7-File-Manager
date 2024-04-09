@@ -32,4 +32,13 @@ function modificar($id, $name, $apellidos, $contra, $genero, $fecha_nacimiento){
 	}	
 
 }
+
+function generador_ip(){
+	$salida = "";
+	for ($i=1; $i <= 4 ; $i++) { 
+		$salida = $salida . mt_rand(0, 255).(($i != 4) ? ".":"");
+	}
+	return $salida;
+}
+
 ?>

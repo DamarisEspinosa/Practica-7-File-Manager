@@ -17,9 +17,9 @@ function Ver(hash) {
     var datos = {
         valor_hash: hash,
     };
-            
+    
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "../operaciones/verArchivo.php", true);
+    xhttp.open("POST", "operaciones/verArchivo.php", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
