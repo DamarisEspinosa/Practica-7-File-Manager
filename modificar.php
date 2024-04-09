@@ -1,16 +1,19 @@
 <?php
+session_start();
 require "modify_helper.php";
 
 if ($_POST) {
-    $id = $_SESSION['usuario_id'];
-    $name = filter_input(INPUT_POST, "nombre");
-    $ape = filter_input(INPUT_POST, "apellidos");
-    $pass = filter_input(INPUT_POST, "password");
+    $userID = $_SESSION['usuario_id'];
+    $nombre = filter_input(INPUT_POST, "nombre");
+    $apellidos = filter_input(INPUT_POST, "apellidos");
+    $password = filter_input(INPUT_POST, "password");
     $genero = filter_input(INPUT_POST, "genero");
-    $fecha = filter_input(INPUT_POST, "fecha-nacimiento");
+    $fechaNac = filter_input(INPUT_POST, "fecha-nacimiento");
 
-    if (modificar($id, $name, $ape, $pass, $genero, $fecha)) {
+    if (modificar($userID, $nombre, $apellidos, $password, $genero, $fechaNac)) {
         echo "<script type='text/javascript'>alert('Se ha modificado satisfactoriamente.')</script>";
+    } else {
+        echo "<script type='text/javascript'>alert('Ha ocurrido un error.')</script>";
     }
 }
 
@@ -29,11 +32,14 @@ if ($_POST) {
     
 </head>
 <body>
+    <div class="logoutBtn">
+        <button class="boton" type="button" onclick="window.location.href='index.php'">Regresar</button>
+    </div>
     <div class="formLogin">
         <h2>Modificar datos</h2>
-        <form action="modificar_helper.php" method="post">
+        <form action="modificar.php" method="post">
             <label>Nombre</label>
-            <input class="registro" type="text" id="nombre" name="nombre" value="<?php echo $_SESSION['usuario_nombre'] ?>" required>
+            <input class="registro" type="text" id="nombre" name="nombre" value="<?php echo $_SESSION['usuario_nombre']; ?>" required>
 
             <label>Apellidos:</label>
             <input class="registro" type="text" id="apellidos" name="apellidos" value="<?php echo $_SESSION['usuario_apellidos'] ?>" required>
@@ -52,7 +58,6 @@ if ($_POST) {
             <input class="registro" type="date" id="fechaNac" name="fechaNac" value="<?php echo $_SESSION['usuario_fecha'] ?>" required>
 
             <input class="boton" type="submit" value="Guardar">
-            <button class="boton" type="button" onclick="window.location.href='index.php'">Regresar</button>
         </form>
     </div>
 </body>

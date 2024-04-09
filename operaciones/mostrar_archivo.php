@@ -11,7 +11,7 @@ require "../config.php";
     <table>
         <tr>
             <th>Nombre</th>
-            <th>Descripcción</th>
+            <th>Descripción</th>
             <th>Tamaño de Archivo</th>
             
             <?php if($usuario_admin){ ?>

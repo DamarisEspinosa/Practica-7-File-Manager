@@ -32,20 +32,4 @@ function modificar($id, $name, $apellidos, $contra, $genero, $fecha_nacimiento){
 	}	
 
 }
-
-require 'config.php';
-session_start();
-if ($_POST) {
-    $id = $_SESSION['usuario_id'];
-    $name = filter_input(INPUT_POST, "nombre");
-    $ape = filter_input(INPUT_POST, "apellidos");
-    $pass = filter_input(INPUT_POST, "password");
-    $genero = filter_input(INPUT_POST, "genero");
-    $fecha = filter_input(INPUT_POST, "fecha-nacimiento");
-
-    if (modificar($id, $name, $ape, $pass, $genero, $fecha)) {
-        echo "<script type='text/javascript'>alert('Se ha modificado satisfactoriamente.')</script>";
-    }
-}
-
 ?>
