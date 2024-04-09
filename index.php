@@ -28,6 +28,7 @@ if (!$_SESSION) {
         <form action="logout.php" method="post">
             <button class="boton" type="submit">Cerrar sesión</button>
         </form>
+        <button class="boton" type="button" onclick="window.location.href='modificar.php'">Modificar datos</button>
     </div>
     <div class="administrador">
         <h1>Bienvenido</h1>
