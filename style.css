@@ -157,3 +157,16 @@ th {
     margin: 10px;
     background-color: transparent;
 }
+
+.formArchivos input[type="submit"] {
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    border: #108373 2px solid;
+    border-radius: 25px;
+    margin: 20px;
+    background-color: #60b1a6;
+}
+.formArchivos input[type="submit"]:hover {
+    background-color: #b1eee6;
+}
